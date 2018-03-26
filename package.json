@@ -1,0 +1,21 @@
+{
+  "name": "amplitube",
+  "version": "1.0.0",
+  "description": "A web app for streaming YouTube audio on-the-go.",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "concurrently": "^3.5.1",
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.3",
+    "nodemon": "^1.17.2",
+    "passport": "^0.4.0",
+    "passport-youtube-v3": "^2.1.0",
+    "youtube-audio-stream": "^0.2.0"
+  }
+}
