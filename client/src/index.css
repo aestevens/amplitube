@@ -3,3 +3,37 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.fa-xl {
+  font-size: 1.5rem;
+}
+
+.Header-container {
+  position: fixed;
+  top: 0;
+  height: 3rem;
+  width: 100%;
+  background-color: #e5e5e5;
+}
+
+.Header-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Header-h3 {
+  margin: 1rem 0 0 1rem;
+}
+
+.Header-login {
+  margin: 0.75rem 1em 0 0;
+}
+
+.SearchBar-container {
+  display: flex;
+  /* justify-content: space-evenly; */
+}
+
+.SearchBar-input {
+  width: 100%;
+}
