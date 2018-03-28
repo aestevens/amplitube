@@ -1,7 +1,7 @@
 import React from 'react';
 import JPlayer, {
   Gui, SeekBar, BufferBar,
-  Poster, Audio, Title, Mute, Play, PlayBar,
+  Poster, Audio, Title, FullScreen, Mute, Play, PlayBar,
   VolumeBar, Duration, CurrentTime, BrowserUnsupported,
 } from 'react-jplayer';
 import JPlaylist, {
@@ -50,12 +50,14 @@ initializeOptions(jPlayerOptions, jPlaylistOptions);
 const AudioPlaylist = () => (
   <JPlaylist id={jPlayerOptions.id}>
     <JPlayer className='jp-sleek'>
+    {console.log(FullScreen)}
       <Audio /> 
       <Gui>
         <div className='jp-controls jp-icon-controls'>
           <Previous><i className='fa fa-step-backward' /></Previous>
           <Play><i className='fa'></i></Play>
           <Next><i className='fa fa-step-forward' /></Next>
+          <FullScreen><i className='fa fa-expand' /></FullScreen>
           <Repeat>
             <i className='fa'></i>
             <i className='fa fa-repeat' />
