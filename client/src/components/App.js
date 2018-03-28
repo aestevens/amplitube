@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header'
+import SearchResults from './SearchResults';
 import AudioPlaylist from './AudioPlaylist';
 
 // Styles the jPlaylist to look nice
@@ -12,6 +13,7 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <SearchResults />
         <AudioPlaylist />
       </div>
     );

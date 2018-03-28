@@ -1,7 +1,7 @@
 import React from 'react';
 import JPlayer, {
   Gui, SeekBar, BufferBar,
-  Poster, Audio, Title, FullScreen, Mute, Play, PlayBar,
+  Poster, Audio, Title, Mute, Play, PlayBar,
   VolumeBar, Duration, CurrentTime, BrowserUnsupported,
 } from 'react-jplayer';
 import JPlaylist, {
@@ -22,7 +22,7 @@ const jPlaylistOptions = {
       title: 'Get Item',
       artist: 'Kingdom Hearts',
       sources: {
-        mp3: 'youtube.com/watch?v=3JEyX9iBwcM',
+        mp3: 'api/audio/3JEyX9iBwcM',
       },
     },
     {
@@ -30,7 +30,7 @@ const jPlaylistOptions = {
       title: 'Alert',
       artist: 'Kingdom Hearts',
       sources: {
-        mp3: 'youtube.com/watch?v=DcHdU_1xWQs',
+        mp3: 'api/audio/DcHdU_1xWQs',
       },
     },
     {
@@ -38,7 +38,7 @@ const jPlaylistOptions = {
       title: 'Random Vid',
       artist: 'Unknown',
       sources: {
-        mp3: 'youtube.com/watch?v=s-mOy8VUEBk',
+        mp3: 'api/audio/s-mOy8VUEBk',
       },
       poster: 'http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png',
     },
@@ -50,14 +50,12 @@ initializeOptions(jPlayerOptions, jPlaylistOptions);
 const AudioPlaylist = () => (
   <JPlaylist id={jPlayerOptions.id}>
     <JPlayer className='jp-sleek'>
-    {console.log(FullScreen)}
       <Audio /> 
       <Gui>
         <div className='jp-controls jp-icon-controls'>
           <Previous><i className='fa fa-step-backward' /></Previous>
           <Play><i className='fa'></i></Play>
           <Next><i className='fa fa-step-forward' /></Next>
-          <FullScreen><i className='fa fa-expand' /></FullScreen>
           <Repeat>
             <i className='fa'></i>
             <i className='fa fa-repeat' />
