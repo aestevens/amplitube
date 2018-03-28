@@ -3,3 +3,127 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.fa {
+  /* color: #FFF; */
+  cursor: pointer;
+}
+
+.fa-xl {
+  font-size: 1.5rem;
+}
+
+.Header-container {
+  position: fixed;
+  top: 0;
+  height: 3rem;
+  width: 100%;
+  background-color: #4D5C74;
+  z-index: 100;
+}
+
+.Header-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Header-h2 {
+  margin: 0.6rem 0 0 1rem;
+}
+
+.MenuBar-search-icon {
+  margin-right: 1rem;
+}
+
+.Header-login {
+  margin: 0.75rem 1em 0 0;
+}
+
+.SearchBar-container {
+  display: flex;
+  margin-top: 0.75rem;
+}
+
+.SearchBar-input {
+  flex: 0.8;
+}
+
+.SearchBar-input input {
+  color: #FFF;
+  background-color: inherit;
+  width: 95%;
+  height: 1.5rem;
+  border: none;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+}
+
+.SearchBar-input input::placeholder {
+  color: #CCC;
+}
+
+.SearchBar-input input[type=text]:focus {
+  outline: none;
+  border-bottom: 3px solid #FFF;
+}
+
+.SearchBar-icon {
+  flex: 0.1;
+}
+
+.SearchBar-icon i {
+  display: flex;
+  justify-content: center;
+}
+
+.SearchResultItem-container {
+  display: flex;
+  padding: 1rem 0;
+}
+
+.SearchResultItem-container:hover {
+  background-color: #CCC;
+}
+
+.SearchResultItem-image {
+  flex: 3;
+  width: 120px;
+  height: 90px;
+  background-image: url(https://i.ytimg.com/vi/bMVIGdAUDGg/maxresdefault.jpg);
+  background-size: cover;
+  position: relative;
+  margin-left: 0.75rem;
+}
+
+.SearchResultItem-image span {
+  position: absolute;
+  bottom: 0.1rem;
+  right: 0.1rem;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 4px 8px;
+  color: white;
+  margin: 0;
+  font: 14px Sans-Serif;
+}
+
+.SearchResultItem-description-container {
+  flex: 2;
+  margin: 0 0.5rem;
+}
+
+.SearchResultItem-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.SearchResultItem-title {
+  flex: 3;
+}
+
+.SearchResultItem-channel, .SearchResultItem-viewcount {
+  flex: 1;
+}
+
+.SearchResults-container {
+  margin: 4rem 0;
+}
