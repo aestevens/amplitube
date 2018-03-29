@@ -53,13 +53,15 @@ const AudioPlaylist = () => (
       <Audio /> 
       <Gui>
         <div className='jp-controls jp-icon-controls'>
-          <Previous><i className='fa fa-step-backward' /></Previous>
           <Play><i className='fa'></i></Play>
-          <Next><i className='fa fa-step-forward' /></Next>
           <Repeat>
             <i className='fa'></i>
             <i className='fa fa-repeat' />
           </Repeat>
+          <div className='jp-title-container'>
+            <Poster />
+            <Title />
+          </div>
           <div className='jp-playlist-container'>
             <Playlist>
               <Remove />
@@ -68,29 +70,6 @@ const AudioPlaylist = () => (
               </MediaLink>
             </Playlist>
             <TogglePlaylist><i className='fa fa-ellipsis-h' /></TogglePlaylist>
-          </div>
-          <Shuffle><i className='fa fa-random' /></Shuffle>
-          <div className='jp-progress'>
-            <SeekBar>
-              <BufferBar />
-              <PlayBar />
-              <CurrentTime />
-              <Duration />
-            </SeekBar>
-          </div>
-          <div className='jp-volume-container'>
-            <Mute>
-              <i className='fa'></i>
-            </Mute>
-            <div className='jp-volume-slider'>
-              <div className='jp-volume-bar-container'>
-                <VolumeBar />
-              </div>
-            </div>
-          </div>
-          <div className='jp-title-container'>
-            <Poster />
-            <Title />
           </div>
         </div>
         <BrowserUnsupported />

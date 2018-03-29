@@ -1,23 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SearchResultItem from './SearchResultItem';
+import loading from '../assets/loading.gif';
 
 class SearchResults extends Component {
 
   renderSearchResultItems = () => {
     return this.props.searchResults.map( result => {
-      return <SearchResultItem {...result} key={result.key} />
+      return <SearchResultItem {...result} data key={result.id} />
     });
   }
 
   renderLoadingImage = () => (
-    <img src='https://mir-s3-cdn-cf.behance.net/project_modules/disp/ab79a231234507.564a1d23814ef.gif' alt='Loading' />
+    <div className='SearchResults-container'>
+      <img src={loading} alt='Loading' />
+    </div>
   )
 
   render() {
+    if (!this.props.searchResults) {
+      return (
+        <div className='SearchResults-container'>
+          <img src={loading} alt='Loading' />
+        </div>
+      )
+    }
     return (
       <div className='SearchResults-container'>
-        { this.props.searchResults ? this.renderSearchResultItems() : this.renderLoadingImage() }  
+        {this.renderSearchResultItems()}  
       </div>
     )
   }

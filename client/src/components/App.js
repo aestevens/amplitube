@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import Header from './Header'
+import Header from './Header';
+import Landing from './Landing';
 import SearchResults from './SearchResults';
 import AudioPlaylist from './AudioPlaylist';
 
 // Styles the jPlaylist to look nice
-import '../../node_modules/react-jplaylist/dist/css/skins/sleek.min.css';
+import '../../node_modules/react-jplaylist/dist/css/skins/sleek.css';
 // Styles Play/Pause/Mute etc when icons (<i />) are used for them
-import '../../node_modules/react-jplaylist/dist/css/controls/iconControls.min.css';
+import '../../node_modules/react-jplaylist/dist/css/controls/iconControls.css';
 
 class App extends Component {
 
@@ -18,8 +19,8 @@ class App extends Component {
     }
   }
 
-  toggleSearchResults = () => {
-    this.setState({ showResults: !this.state.showResults });
+  toggleSearchResults = (boolean) => {
+    this.setState({ showResults: boolean });
   }
 
   render() {

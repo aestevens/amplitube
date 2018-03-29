@@ -21,9 +21,14 @@ class SearchBar extends Component {
   handleInputSubmit = event => {
     if (event.key === 'Enter' && this.state.searchValue) {
       event.preventDefault();
-      this.props.toggleSearchResults();
+      this.props.toggleSearchResults(true);
       this.props.fetchSearchResults(this.state.searchValue);
     }
+  }
+
+  handleNavigateBack = () => {
+    this.props.toggleHeaderBar();
+    this.props.toggleSearchResults(false);
   }
 
   updateSearchValue = event => {
@@ -38,7 +43,7 @@ class SearchBar extends Component {
     return (
       <nav className='SearchBar-container'>
         <div className='SearchBar-icon'>
-          <i className='fa fa-arrow-left fa-xl' onClick={this.props.toggleHeaderBar}></i>
+          <i className='fa fa-arrow-left fa-xl' onClick={this.handleNavigateBack}></i>
         </div>
         <div className='SearchBar-input'>
           <input

@@ -20,7 +20,8 @@ export default function (state = [], action) {
           title: video.snippet.title,
           artist: video.snippet.channelTitle,
           poster: video.snippet.thumbnails.high.url,
-          duration: getDuration(video.contentDetails.duration)
+          duration: getDuration(video.contentDetails.duration),
+          viewCount: video.statistics.viewCount
         }
       });
 		default:

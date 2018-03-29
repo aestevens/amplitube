@@ -1,7 +1,12 @@
 body {
+  background-color: #7F99C1;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+h1, h3 {
+  font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
 }
 
 .fa {
@@ -14,6 +19,7 @@ body {
 }
 
 .Header-container {
+  color: #FFF;
   position: fixed;
   top: 0;
   height: 3rem;
@@ -37,6 +43,29 @@ body {
 
 .Header-login {
   margin: 0.75rem 1em 0 0;
+}
+
+.Landing {
+  margin: 4rem 0.25rem;
+  text-align: center;
+}
+
+.Landing img {
+  margin-top: 4rem;
+  height: auto;
+  width: 100px;
+}
+
+.Landing h1 {
+  color: #4D5C74;
+  line-height: 50px;
+  margin: 0.5rem 0;
+}
+
+.Landing h3 {
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
 }
 
 .SearchBar-container {
@@ -89,7 +118,6 @@ body {
   flex: 3;
   width: 120px;
   height: 90px;
-  background-image: url(https://i.ytimg.com/vi/bMVIGdAUDGg/maxresdefault.jpg);
   background-size: cover;
   position: relative;
   margin-left: 0.75rem;
@@ -97,9 +125,9 @@ body {
 
 .SearchResultItem-image span {
   position: absolute;
-  bottom: 0.1rem;
-  right: 0.1rem;
-  background: rgba(0, 0, 0, 0.75);
+  bottom: 0.2rem;
+  right: 0.2rem;
+  background: rgba(77, 92, 116, 0.7);
   padding: 4px 8px;
   color: white;
   margin: 0;
@@ -117,6 +145,7 @@ body {
 }
 
 .SearchResultItem-title {
+  color: #2A4774;
   flex: 3;
 }
 
@@ -125,5 +154,6 @@ body {
 }
 
 .SearchResults-container {
+  color: #4D5C74;
   margin: 4rem 0;
 }

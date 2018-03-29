@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MenuBar from './MenuBar';
 import SearchBar from './SearchBar';
+import Landing from './Landing';
 
 class Header extends Component {
 
@@ -23,6 +24,7 @@ class Header extends Component {
         <nav>
           { this.state.isSearching ? <SearchBar toggleHeaderBar={this.toggleHeaderBar} toggleSearchResults={this.props.toggleSearchResults} /> : <MenuBar toggleHeaderBar={this.toggleHeaderBar} /> }
         </nav>
+        { this.state.isSearching ? null : <Landing /> }
       </div>
     )
   }

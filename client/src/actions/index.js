@@ -1,9 +1,10 @@
 import axios from 'axios';
-import { actions } from 'react-jplaylist';
+import { actions as playerActions } from 'react-jplayer';
+import { actions as playlistActions } from 'react-jplaylist';
 import { FETCH_SEARCH_RESULTS, FETCH_RESULTS_METADATA } from './types';
 
 export const playSelected = index => dispatch => {
-  dispatch(actions.play('AmpliTubePlaylist', index));
+  dispatch(playlistActions.play('AmpliTubePlaylist', index));
 };
 
 export const fetchSearchResults = searchValue => async dispatch => {
