@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 class SearchResultItem extends Component {
 
   render() {
     return (
-      <div className='SearchResultItem-container'>
+      <div className='SearchResultItem-container' onClick={() => { this.props.playSelected(2) }}>
         <div className='SearchResultItem-image'>
           <span>4:00</span>
         </div>
@@ -27,4 +29,4 @@ class SearchResultItem extends Component {
 
 }
 
-export default SearchResultItem;
+export default connect(null, actions)(SearchResultItem);

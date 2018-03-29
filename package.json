@@ -18,6 +18,7 @@
     "nodemon": "^1.17.2",
     "passport": "^0.4.0",
     "passport-youtube-v3": "^2.1.0",
+    "request": "^2.85.0",
     "youtube-audio-stream": "^0.2.0"
   }
 }

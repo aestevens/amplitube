@@ -10,7 +10,7 @@ import JPlaylist, {
 } from 'react-jplaylist';
 
 const jPlayerOptions = {
-  id: 'AudioPlaylist',
+  id: 'AmpliTubePlaylist',
   verticalVolume: true,
 };
 

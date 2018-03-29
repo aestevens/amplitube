@@ -9,11 +9,24 @@ import '../../node_modules/react-jplaylist/dist/css/skins/sleek.min.css';
 import '../../node_modules/react-jplaylist/dist/css/controls/iconControls.min.css';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showResults: false
+    }
+  }
+
+  toggleSearchResults = () => {
+    this.setState({ showResults: !this.state.showResults });
+  }
+
   render() {
     return (
       <div>
-        <Header />
-        <SearchResults />
+        <Header toggleSearchResults={this.toggleSearchResults} />
+        { this.state.showResults ? <SearchResults /> : null }
         <AudioPlaylist />
       </div>
     );

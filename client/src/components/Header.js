@@ -21,7 +21,7 @@ class Header extends Component {
     return (
       <div className='Header-container'>
         <nav>
-          { this.state.isSearching ? <SearchBar toggleHeaderBar={this.toggleHeaderBar} /> : <MenuBar toggleHeaderBar={this.toggleHeaderBar} /> }
+          { this.state.isSearching ? <SearchBar toggleHeaderBar={this.toggleHeaderBar} toggleSearchResults={this.props.toggleSearchResults} /> : <MenuBar toggleHeaderBar={this.toggleHeaderBar} /> }
         </nav>
       </div>
     )

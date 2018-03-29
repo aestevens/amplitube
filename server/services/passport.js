@@ -1,6 +1,6 @@
 const passport = require('passport');
 const YouTubeV3Strategy = require('passport-youtube-v3').Strategy;
-const keys = require('../config/dev');
+const keys = require('../config/keys');
 
 passport.use(
   new YouTubeV3Strategy(
