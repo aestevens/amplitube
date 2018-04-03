@@ -3,9 +3,18 @@ import { actions as playerActions } from 'react-jplayer';
 import { actions as playlistActions } from 'react-jplaylist';
 import { FETCH_SEARCH_RESULTS, FETCH_RESULTS_METADATA } from './types';
 
-export const playSelected = index => dispatch => {
-  dispatch(playlistActions.play('AmpliTubePlaylist', index));
+export const setMedia = media => dispatch => {
+  dispatch(playerActions.setMedia('AmpliTubePlaylist', media));
 };
+
+export const playCurrentMedia = () => dispatch => {
+  dispatch(playerActions.play('AmpliTubePlaylist'));
+};
+
+export const addMediaToPlaylist = media => (dispatch, getState) => {
+  media.id = getState().jPlaylists.playlist.length;
+  dispatch(playlistActions.add('AmpliTubePlaylist', media, false));
+}
 
 export const fetchSearchResults = searchValue => async dispatch => {
   const searchRes = await axios.get('/api/search', { params: { searchValue }});

@@ -62,6 +62,7 @@ const AudioPlaylist = () => (
             <Poster />
             <Title />
           </div>
+          <CurrentTime />
           <div className='jp-playlist-container'>
             <Playlist>
               <Remove />

@@ -5,10 +5,26 @@ import * as actions from '../actions';
 
 class SearchResultItem extends Component {
 
+  getSelectedMedia = event => {
+    return this.props.searchResults.find( result => result.id == event.target.dataset.index);
+  }
+
+  handlePlaySelected = event => {
+    const selectedMedia = this.getSelectedMedia(event);
+    this.props.setMedia(selectedMedia);
+    this.props.playCurrentMedia();
+  }
+
+  handleAddToPlaylist = event => {
+    console.log('clicked');
+    const selectedMedia = this.getSelectedMedia(event);
+    this.props.addMediaToPlaylist(selectedMedia);
+  }
+
   render() {
     return (
-      <div className='SearchResultItem-container' onClick={() => { this.props.playSelected(2) }}>
-        <div className='SearchResultItem-image' style={{ backgroundImage: `url(${this.props.poster}`}}>
+      <div className='SearchResultItem-container' >
+        <div className='SearchResultItem-image' data-index={this.props.id} style={{ backgroundImage: `url(${this.props.poster}`}} onClick={this.handlePlaySelected}>
           <span>{this.props.duration}</span>
         </div>
         <div className='SearchResultItem-description-container'>
@@ -19,8 +35,8 @@ class SearchResultItem extends Component {
             <div className='SearchResultItem-channel'>
             {_.truncate(this.props.artist, 15)}
             </div>
-            <div className='SearchResultItem-viewcount'>
-              {this.props.viewCount} views
+            <div className='SearchResultItem-addToPlaylist' data-index={this.props.id} onClick={this.handleAddToPlaylist}>
+              <i className='fa fa-plus'></i> add to playlist
             </div>
           </div>
         </div>
@@ -30,4 +46,8 @@ class SearchResultItem extends Component {
 
 }
 
-export default connect(null, actions)(SearchResultItem);
+function mapStateToProps({ searchResults }) {
+  return { searchResults };
+}
+
+export default connect(mapStateToProps, actions)(SearchResultItem);

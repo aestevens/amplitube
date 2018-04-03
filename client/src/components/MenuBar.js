@@ -10,7 +10,6 @@ class MenuBar extends Component {
         </div>
         <div className='Header-login'>
           <i className='fa fa-search fa-xl MenuBar-search-icon' onClick={this.props.toggleHeaderBar}></i>
-          <i className='fa fa-user-circle fa-xl'></i>
         </div>
       </nav>
     )

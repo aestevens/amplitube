@@ -115,6 +115,7 @@ h1, h3 {
 }
 
 .SearchResultItem-image {
+  cursor: pointer;
   flex: 3;
   width: 120px;
   height: 90px;
@@ -149,8 +150,13 @@ h1, h3 {
   flex: 3;
 }
 
-.SearchResultItem-channel, .SearchResultItem-viewcount {
+.SearchResultItem-channel {
   flex: 1;
+}
+
+.SearchResultItem-addToPlaylist {
+  flex: 1;
+  padding-top: 0.5rem;
 }
 
 .SearchResults-container {
