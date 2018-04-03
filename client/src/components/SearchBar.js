@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 class SearchBar extends Component {
 
@@ -16,7 +18,20 @@ class SearchBar extends Component {
     this.searchInput.focus();
   }
 
-  updateSearchValue = (event) => {
+  handleInputSubmit = event => {
+    if (event.key === 'Enter' && this.state.searchValue) {
+      event.preventDefault();
+      this.props.toggleSearchResults(true);
+      this.props.fetchSearchResults(this.state.searchValue);
+    }
+  }
+
+  handleNavigateBack = () => {
+    this.props.toggleHeaderBar();
+    this.props.toggleSearchResults(false);
+  }
+
+  updateSearchValue = event => {
     this.setState({ searchValue: event.target.value });
   }
 
@@ -28,10 +43,17 @@ class SearchBar extends Component {
     return (
       <nav className='SearchBar-container'>
         <div className='SearchBar-icon'>
-          <i className='fa fa-arrow-left fa-xl' onClick={this.props.toggleHeaderBar}></i>
+          <i className='fa fa-arrow-left fa-xl' onClick={this.handleNavigateBack}></i>
         </div>
         <div className='SearchBar-input'>
-          <input ref={(input) => { this.searchInput = input; }} type='text' value={this.state.searchValue} placeholder='search AmpliTube' onChange={this.updateSearchValue} />
+          <input
+            ref={(input) => { this.searchInput = input; }}
+            type='text'
+            value={this.state.searchValue}
+            placeholder='search AmpliTube'
+            onChange={this.updateSearchValue}
+            onKeyPress={this.handleInputSubmit}
+          />
         </div>
         <div className='SearchBar-icon'>
           { this.state.searchValue ? <i className='fa fa-times fa-xl' onClick={this.handleClearSearchValue}></i> : null }
@@ -41,4 +63,4 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+export default connect(null, actions)(SearchBar);

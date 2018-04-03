@@ -1,23 +1,42 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 class SearchResultItem extends Component {
 
+  getSelectedMedia = event => {
+    return this.props.searchResults.find( result => result.id == event.target.dataset.index);
+  }
+
+  handlePlaySelected = event => {
+    const selectedMedia = this.getSelectedMedia(event);
+    this.props.setMedia(selectedMedia);
+    this.props.playCurrentMedia();
+  }
+
+  handleAddToPlaylist = event => {
+    console.log('clicked');
+    const selectedMedia = this.getSelectedMedia(event);
+    this.props.addMediaToPlaylist(selectedMedia);
+  }
+
   render() {
     return (
-      <div className='SearchResultItem-container'>
-        <div className='SearchResultItem-image'>
-          <span>4:00</span>
+      <div className='SearchResultItem-container' >
+        <div className='SearchResultItem-image' data-index={this.props.id} style={{ backgroundImage: `url(${this.props.poster}`}} onClick={this.handlePlaySelected}>
+          <span>{this.props.duration}</span>
         </div>
         <div className='SearchResultItem-description-container'>
           <div className='SearchResultItem-description'>
             <div className='SearchResultItem-title'>
-              Bootcamps are for Squares
+              <strong>{_.truncate(this.props.title, 12)}</strong>
             </div>
             <div className='SearchResultItem-channel'>
-              Project Shift
+            {_.truncate(this.props.artist, 15)}
             </div>
-            <div className='SearchResultItem-viewcount'>
-              2.0M views
+            <div className='SearchResultItem-addToPlaylist' data-index={this.props.id} onClick={this.handleAddToPlaylist}>
+              <i className='fa fa-plus'></i> add to playlist
             </div>
           </div>
         </div>
@@ -27,4 +46,8 @@ class SearchResultItem extends Component {
 
 }
 
-export default SearchResultItem;
+function mapStateToProps({ searchResults }) {
+  return { searchResults };
+}
+
+export default connect(mapStateToProps, actions)(SearchResultItem);

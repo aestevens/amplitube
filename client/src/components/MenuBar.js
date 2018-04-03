@@ -6,11 +6,10 @@ class MenuBar extends Component {
     return (
       <nav className='Header-nav'>
         <div>
-          <h2 className='Header-h2'>AmpliTube</h2>
+          <h3 className='Header-h2'>AmpliTube</h3>
         </div>
         <div className='Header-login'>
           <i className='fa fa-search fa-xl MenuBar-search-icon' onClick={this.props.toggleHeaderBar}></i>
-          <i className='fa fa-user-circle fa-xl'></i>
         </div>
       </nav>
     )
