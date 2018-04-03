@@ -4,7 +4,9 @@
   "description": "A web app for streaming YouTube audio on-the-go.",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon server"
+    "server": "nodemon server/index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +18,7 @@
     "nodemon": "^1.17.2",
     "passport": "^0.4.0",
     "passport-youtube-v3": "^2.1.0",
+    "request": "^2.85.0",
     "youtube-audio-stream": "^0.2.0"
   }
 }
