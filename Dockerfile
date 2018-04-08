@@ -1,9 +1,12 @@
 FROM node:carbon
 
+ENV NODE_ENV=production
+ENV PORT=80
+
 WORKDIR /app
 
 COPY package.json .
-RUN npm install
+RUN npm install --only=production
 
 COPY server/ server/
 
