@@ -2,6 +2,7 @@ FROM node:carbon
 
 ENV NODE_ENV=production
 ENV PORT=80
+ENV GOOGLE_API_KEY=""
 
 WORKDIR /app
 
@@ -21,5 +22,5 @@ CMD ["npm", "run", "server"]
 #Building the image
 # docker build -t amplitube .
 
-#Running the image
-# docker run -it --name amp amplitube
+#Running the image locally on port 8080
+# docker run -it --name amp -p 8080:80 -e "GOOGLE_API_KEY=..." amplitube
